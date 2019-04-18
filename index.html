@@ -6,7 +6,7 @@
         $(document).ready(function() {
             $("#submit").click(function(e) {
                 e.preventDefault();
-                var querystring = require('querystring');
+                
                 var name = $("#name").val(),
                     email = $("#email").val(),
                     message = $("#message").val();
@@ -15,11 +15,11 @@
                     type: "POST",
                     url: 'https://ghs2o18gil.execute-api.us-east-1.amazonaws.com/form_submission_api/',
                     contentType: 'application/x-www-form-urlencoded',
-                    data: querystring.stringify({
+                    data: {
                         'name': name,
                         'email': email,
                         'message': message
-                    }),
+                    },
                     success: function(res){
                         
                         $('#form-response').ready(function() { 
