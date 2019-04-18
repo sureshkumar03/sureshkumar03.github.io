@@ -22,13 +22,15 @@
                         'message': message
                     }),
                     success: function(res){
-                        //$('#form-response').text(res);
+                        
                         $('#form-response').ready(function() { 
-           window.location.href = "https://sureshkumar03.github.io/success_page.html";
+           window.location.href = res;
         }); 
                     },
                     error: function(res){
-                        $('#form-response').text(res);
+                        $('#form-response').ready(function() { 
+           window.location.href = res;
+        }); 
                     }
                 });
 
@@ -39,11 +41,11 @@
 </head>
 <body>
 <form>
-    <label for="name">NAME</label>
+    <label for="name">Name</label>
     <input id="name">
-    <label for="email">EMAIL</label>
+    <label for="email">Email</label>
     <input id="email">
-    <label for="message">MESSAGE</label>
+    <label for="message">Message</label>
     <textarea id="message"></textarea>
     <button id="submit">Submit</button>
 </form>
