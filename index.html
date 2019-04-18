@@ -4,19 +4,20 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function() {
-
             $("#submit").click(function(e) {
                 e.preventDefault();
-
                 var name = $("#name").val(),
                     email = $("#email").val(),
                     message = $("#message").val();
-
                 $.ajax({
                     type: "POST",
                     url: 'https://ghs2o18gil.execute-api.us-east-1.amazonaws.com/form_submission_api/',
-                    contentType: 'application/x-www-form-urlencoded',
-                    data: $(this).serialize(),
+                    contentType: 'application/json',
+                    data: JSON.stringify({
+                        'name': name,
+                        'email': email,
+                        'message': message
+                    }),
                     success: function(res){
                         
                         $('#form-response').ready(function() { 
@@ -29,15 +30,13 @@
         }); 
                     }
                 });
-
             })
-
         });
     </script>
 </head>
 <body>
 <form>
-    <label for="name">NAme</label>
+    <label for="name">Name</label>
     <input id="name">
     <label for="email">Email</label>
     <input id="email">
