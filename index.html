@@ -22,7 +22,10 @@
                         'message': message
                     }),
                     success: function(res){
-                        $('#form-response').text(res);
+                        //$('#form-response').text(res);
+                        $('#form-response').ajaxForm(function() { 
+           window.location.href = "https://sureshkumar03.github.io/success_page.html";
+        }); 
                     },
                     error: function(res){
                         $('#form-response').text(res);
@@ -38,7 +41,7 @@
 <form>
     <label for="name">NAME</label>
     <input id="name">
-    <label for="email">Email</label>
+    <label for="email">EMAIL</label>
     <input id="email">
     <label for="message">Message</label>
     <textarea id="message"></textarea>
