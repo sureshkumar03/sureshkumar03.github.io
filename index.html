@@ -22,7 +22,7 @@
                         'message': message
                     }),
                     success: function(res){
-                        $('#form-response').text('Form data pushed to dynamodb successfully');
+                        $('#form-response').text(res);
                     },
                     error: function(){
                         $('#form-response').text('Error.');
