@@ -6,14 +6,16 @@
         $(document).ready(function() {
             $("#submit").click(function(e) {
                 e.preventDefault();
+                var querystring = require('querystring');
                 var name = $("#name").val(),
                     email = $("#email").val(),
                     message = $("#message").val();
+                
                 $.ajax({
                     type: "POST",
                     url: 'https://ghs2o18gil.execute-api.us-east-1.amazonaws.com/form_submission_api/',
-                    contentType: 'application/json',
-                    data: JSON.stringify({
+                    contentType: 'application/x-www-form-urlencoded',
+                    data: querystring.stringify({
                         'name': name,
                         'email': email,
                         'message': message
