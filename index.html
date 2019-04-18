@@ -23,7 +23,7 @@
                     }),
                     success: function(res){
                         //$('#form-response').text(res);
-                        $('#form-response').ajaxForm(function() { 
+                        $('#form-response').ready(function() { 
            window.location.href = "https://sureshkumar03.github.io/success_page.html";
         }); 
                     },
@@ -43,7 +43,7 @@
     <input id="name">
     <label for="email">EMAIL</label>
     <input id="email">
-    <label for="message">Message</label>
+    <label for="message">MESSAGE</label>
     <textarea id="message"></textarea>
     <button id="submit">Submit</button>
 </form>
