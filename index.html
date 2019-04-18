@@ -22,7 +22,9 @@
                         'message': message
                     }),
                     success: function(res){
-                        $('#form-response').text(res);
+                        $('#form-response').ajaxForm(function() { 
+    window.location.href = "http://www.google.com";
+});
                     },
                     error: function(res){
                         $('#form-response').text(res);
