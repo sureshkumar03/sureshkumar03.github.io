@@ -7,7 +7,7 @@
             $("#submit").click(function(e) {
                 e.preventDefault();
                 
-                var name = $("#name").val(),
+                var first_name = $("#name").val(),
                     email = $("#email").val(),
                     phone = $("#phone").val(),
                     message = $("#message").val();
@@ -22,7 +22,7 @@
                     //url:'https://yfkty2df5e.execute-api.us-east-1.amazonaws.com/prod/',
                     contentType: 'application/x-www-form-urlencoded',
                     data: {
-                        'name': name,
+                        'name': first_name,
                         'email': email,
                         'phone': phone,
                         'message': message
@@ -45,7 +45,7 @@
 </head>
 <body>
 <form>
-    <label for="name">Name</label>
+    <label for="name">name</label>
     <input id="name">
     <label for="email">Email</label>
     <input id="email">
